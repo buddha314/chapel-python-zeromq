@@ -1,10 +1,12 @@
 use ZMQ;
 var context: Context;
-var socket = context.socket(ZMQ.PULL);
-socket.connect("tcp://localhost:5555");
+var socket = context.socket(ZMQ.REP);
+socket.bind("tcp://*:5555");
 
 while ( 1 < 2) {
-  writeln("Hello, ", socket.recv(string));
+  var msg = socket.recv(string);
+  socket.recv(string);
+  writeln("got something");
   socket.send("back from chapel");
 }
 
