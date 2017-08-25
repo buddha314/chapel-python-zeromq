@@ -7,7 +7,8 @@ Got some good advice on the [SO Post](https://stackoverflow.com/questions/456517
 
 # Running
 
-You need Chapel 1.16+.  Open two terminals
+You need Chapel 1.16+.  Open two terminals.  Edit the Makefile to point to your
+ZMQ lib dir.
 
 ```
 1 > cd src/chpl

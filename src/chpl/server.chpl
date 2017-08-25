@@ -3,10 +3,8 @@ var context: Context;
 var socket = context.socket(ZMQ.REP);
 socket.bind("tcp://*:5555");
 
-while ( 1 < 2) {
+for i in 0..#10 {
   var msg = socket.recv(string);
-  socket.recv(string);
-  writeln("got something");
-  socket.send("back from chapel");
+  writeln("[Chapel Server] received message: ", msg);
+  socket.send("This it the %i th time I'm telling you to shut up!".format(i));
 }
-
